@@ -1,3 +1,4 @@
+/* --- general --- */
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
 body{background:#f5f5f5;color:#222;min-height:100vh;display:flex;flex-direction:column;}
 .header{background:#111827;color:#fff;padding:14px 18px;text-align:center;}
@@ -9,6 +10,8 @@ body{background:#f5f5f5;color:#222;min-height:100vh;display:flex;flex-direction:
 .filter-btn{border:none;padding:8px 14px;border-radius:999px;cursor:pointer;font-size:13px;background:#e5e7eb;transition:0.15s;}
 .filter-btn.active{background:#111827;color:#fff;}
 .filter-btn:hover{filter:brightness(0.95);}
+
+/* product grid */
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:6px;}
 .product-card{background:#fff;border-radius:12px;padding:10px;box-shadow:0 1px 3px rgba(0,0,0,0.08);display:flex;flex-direction:column;gap:8px;cursor:default;}
 .product-card .product-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block;cursor:pointer;}
@@ -19,6 +22,8 @@ body{background:#f5f5f5;color:#222;min-height:100vh;display:flex;flex-direction:
 .out-of-stock{background:#fee2e2;color:#991b1b;}
 .footer-info{margin-top:20px;padding:12px;background:#e5e7eb;border-radius:10px;font-size:13px;}
 .footer{padding:12px;text-align:center;color:#6b7280;font-size:13px;}
+
+/* --- LIGHTBOX / MODAL --- */
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:1000;padding:18px;}
 .lightbox[aria-hidden="false"]{display:flex;}
 .lightbox-content{position:relative;background:#fff;border-radius:12px;max-width:900px;width:100%;display:grid;grid-template-columns:1fr 320px;gap:8px;align-items:center;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);}
