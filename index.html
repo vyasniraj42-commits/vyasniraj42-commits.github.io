@@ -13,37 +13,144 @@
   </header>
 
   <main class="layout">
-    <!-- Sidebar -->
+    <!-- Sidebar categories -->
     <aside class="sidebar">
-      <h3>ફોલ્ડર્સ (Categories)</h3>
-      <ul id="folderList" class="folder-list"></ul>
+      <h3>કેટેગરી</h3>
+      <ul id="categoryList" class="category-list">
+        <li class="cat-item active" data-cat="all">બધા</li>
+        <li class="cat-item" data-cat="accessories">Baby Accessories</li>
+        <li class="cat-item" data-cat="toys">Toys</li>
+        <li class="cat-item" data-cat="blanket">Blanket</li>
+        <li class="cat-item" data-cat="towel">Towel</li>
+        <li class="cat-item" data-cat="sweater">Sweater</li>
+        <li class="cat-item" data-cat="cloth">Cloth</li>
+        <li class="cat-item" data-cat="cap">Cap</li>
+        <li class="cat-item" data-cat="bag">Bag</li>
+        <li class="cat-item" data-cat="sleeping">Sleeping</li>
+        <li class="cat-item" data-cat="gift">Gift</li>
+      </ul>
 
-      <div class="help" style="margin-top:12px;">
-        <p><strong>નોધ:</strong> ફોટા path: <code>images/{category}/{file}.jpg</code></p>
-      </div>
-
-      <div style="margin-top:14px;">
+      <div class="filter-box">
         <h4>સ્ટોક ફિલ્ટર</h4>
         <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn active" data-filter="all">બધા</button>
           <button class="filter-btn" data-filter="in-stock">In Stock</button>
           <button class="filter-btn" data-filter="out-of-stock">Out of Stock</button>
         </div>
       </div>
+
+      <div class="help">
+        <p><strong>નોધ:</strong> ફોટા ઓર્ડર પ્રમાણે `images/{category}/{name}.jpg` ફેરવવો.</p>
+      </div>
     </aside>
 
-    <!-- Main: either show folders or products -->
+    <!-- Main content -->
     <section class="content">
-      <div class="controls">
-        <button id="backBtn" class="back-btn" style="display:none;">← Back to folders</button>
-        <h1 id="pageTitle" class="page-title">ફોલ્ડર્સ</h1>
-      </div>
+      <h1 class="page-title">અમારી પ્રોડક્ટ લિસ્ટ</h1>
 
-      <!-- Folders grid -->
-      <section id="foldersGrid" class="folders-grid"></section>
+      <section class="product-grid" id="productGrid">
+        <!-- Sample product cards with category folders in image path -->
+        <div class="product-card" data-status="in-stock" data-category="accessories" data-name="Baby Musical Rattle" data-price="₹ 190" data-stock="In Stock (10 pcs)">
+          <img src="images/accessories/1.jpg" alt="Baby Musical Rattle" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Musical Rattle</h2>
+            <p class="product-price">₹ 190</p>
+            <p class="product-stock in-stock">In Stock (10 pcs)</p>
+            <span class="badge">Accessories</span>
+          </div>
+        </div>
 
-      <!-- Products grid (hidden initially) -->
-      <section id="productGrid" class="product-grid" style="display:none;"></section>
+        <div class="product-card" data-status="in-stock" data-category="toys" data-name="Baby Remote Shape Tether" data-price="₹ 65" data-stock="In Stock (12 pcs)">
+          <img src="images/toys/2.jpg" alt="Baby Remote Shape Tether" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Remote Shape Tether</h2>
+            <p class="product-price">₹ 65</p>
+            <p class="product-stock in-stock">In Stock (12 pcs)</p>
+            <span class="badge">Toys</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="blanket" data-name="Baby Blanket" data-price="₹ 549" data-stock="In Stock (5 pcs)">
+          <img src="images/blanket/3.jpg" alt="Baby Blanket" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Blanket</h2>
+            <p class="product-price">₹ 549</p>
+            <p class="product-stock in-stock">In Stock (5 pcs)</p>
+            <span class="badge">Blanket</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="towel" data-name="Baby Towels 50x100" data-price="₹ 299" data-stock="In Stock (8 pcs)">
+          <img src="images/towel/4.jpg" alt="Baby Towels 50x100" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Towels 50x100</h2>
+            <p class="product-price">₹ 299</p>
+            <p class="product-stock in-stock">In Stock (8 pcs)</p>
+            <span class="badge">Towel</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="out-of-stock" data-category="sweater" data-name="Baby Winter Sweater" data-price="₹ 499" data-stock="Out of Stock">
+          <img src="images/sweater/5.jpg" alt="Baby Winter Sweater" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Winter Sweater</h2>
+            <p class="product-price">₹ 499</p>
+            <p class="product-stock out-of-stock">Out of Stock</p>
+            <span class="badge">Sweater</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="cap" data-name="Baby Cap" data-price="₹ 149" data-stock="In Stock (20 pcs)">
+          <img src="images/cap/6.jpg" alt="Baby Cap" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Cap</h2>
+            <p class="product-price">₹ 149</p>
+            <p class="product-stock in-stock">In Stock (20 pcs)</p>
+            <span class="badge">Cap</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="sleeping" data-name="Baby Sleeping Bag" data-price="₹ 799" data-stock="In Stock (3 pcs)">
+          <img src="images/sleeping/7.jpg" alt="Baby Sleeping Bag" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Sleeping Bag</h2>
+            <p class="product-price">₹ 799</p>
+            <p class="product-stock in-stock">In Stock (3 pcs)</p>
+            <span class="badge">Sleeping</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="out-of-stock" data-category="bag" data-name="Premium Mother Bag" data-price="₹ 999" data-stock="Out of Stock">
+          <img src="images/bag/8.jpg" alt="Premium Mother Bag" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Premium Mother Bag</h2>
+            <p class="product-price">₹ 999</p>
+            <p class="product-stock out-of-stock">Out of Stock</p>
+            <span class="badge">Bag</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="winterset" data-name="Baby Winter Set" data-price="₹ 899" data-stock="In Stock (4 pcs)">
+          <img src="images/winterset/9.jpg" alt="Baby Winter Set" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Winter Set</h2>
+            <p class="product-price">₹ 899</p>
+            <p class="product-stock in-stock">In Stock (4 pcs)</p>
+            <span class="badge">Winter Set</span>
+          </div>
+        </div>
+
+        <div class="product-card" data-status="in-stock" data-category="gift" data-name="Baby Gift Combo" data-price="₹ 1,199" data-stock="In Stock (2 pcs)">
+          <img src="images/gift/10.jpg" alt="Baby Gift Combo" class="product-img">
+          <div class="meta">
+            <h2 class="product-name">Baby Gift Combo</h2>
+            <p class="product-price">₹ 1,199</p>
+            <p class="product-stock in-stock">In Stock (2 pcs)</p>
+            <span class="badge">Gift</span>
+          </div>
+        </div>
+
+      </section>
 
       <section class="footer-info">
         <h2>Shop Detail</h2>
