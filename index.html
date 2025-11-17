@@ -12,94 +12,45 @@
     <div class="tagline">તમારા બાળક માટે ખાસ કલેક્શન</div>
   </header>
 
-  <main class="container">
-    <section class="filter-section">
-      <h1>અમારી પ્રોડક્ટ લિસ્ટ</h1>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">બધી પ્રોડક્ટ</button>
-        <button class="filter-btn" data-filter="in-stock">In Stock</button>
-        <button class="filter-btn" data-filter="out-of-stock">Out of Stock</button>
-      </div>
-    </section>
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>ફોલ્ડર્સ (Categories)</h3>
+      <ul id="folderList" class="folder-list"></ul>
 
-    <section class="product-grid" id="productGrid">
-      <!-- Product cards: images/p1.jpg ... images/p10.jpg -->
-      <div class="product-card" data-status="in-stock" data-category="toy" data-name="Baby Musical Rattle" data-price="₹ 190" data-stock="In Stock (10 pcs)">
-        <img src="1.jpeg" alt="Baby Musical Rattle" class="product-img">
-        <h2 class="product-name">Baby Musical Rattle</h2>
-        <p class="product-price">₹ 190</p>
-        <p class="product-stock in-stock">In Stock (10 pcs)</p>
+      <div class="help" style="margin-top:12px;">
+        <p><strong>નોધ:</strong> ફોટા path: <code>images/{category}/{file}.jpg</code></p>
       </div>
 
-      <div class="product-card" data-status="in-stock" data-category="toy" data-name="Baby Remote Shape Tether" data-price="₹ 65" data-stock="In Stock (12 pcs)">
-        <img src="images/p2.jpg" alt="Baby Remote Shape Tether" class="product-img">
-        <h2 class="product-name">Baby Remote Shape Tether</h2>
-        <p class="product-price">₹ 65</p>
-        <p class="product-stock in-stock">In Stock (12 pcs)</p>
+      <div style="margin-top:14px;">
+        <h4>સ્ટોક ફિલ્ટર</h4>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="in-stock">In Stock</button>
+          <button class="filter-btn" data-filter="out-of-stock">Out of Stock</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main: either show folders or products -->
+    <section class="content">
+      <div class="controls">
+        <button id="backBtn" class="back-btn" style="display:none;">← Back to folders</button>
+        <h1 id="pageTitle" class="page-title">ફોલ્ડર્સ</h1>
       </div>
 
-      <div class="product-card" data-status="in-stock" data-category="blanket" data-name="Baby Blanket" data-price="₹ 549" data-stock="In Stock (5 pcs)">
-        <img src="images/p3.jpg" alt="Baby Blanket" class="product-img">
-        <h2 class="product-name">Baby Blanket</h2>
-        <p class="product-price">₹ 549</p>
-        <p class="product-stock in-stock">In Stock (5 pcs)</p>
-      </div>
+      <!-- Folders grid -->
+      <section id="foldersGrid" class="folders-grid"></section>
 
-      <div class="product-card" data-status="in-stock" data-category="towel" data-name="Baby Towels 50x100" data-price="₹ 299" data-stock="In Stock (8 pcs)">
-        <img src="images/p4.jpg" alt="Baby Towels 50x100" class="product-img">
-        <h2 class="product-name">Baby Towels 50x100</h2>
-        <p class="product-price">₹ 299</p>
-        <p class="product-stock in-stock">In Stock (8 pcs)</p>
-      </div>
+      <!-- Products grid (hidden initially) -->
+      <section id="productGrid" class="product-grid" style="display:none;"></section>
 
-      <div class="product-card" data-status="out-of-stock" data-category="sweater" data-name="Baby Winter Sweater" data-price="₹ 499" data-stock="Out of Stock">
-        <img src="images/p5.jpg" alt="Baby Winter Sweater" class="product-img">
-        <h2 class="product-name">Baby Winter Sweater</h2>
-        <p class="product-price">₹ 499</p>
-        <p class="product-stock out-of-stock">Out of Stock</p>
-      </div>
-
-      <div class="product-card" data-status="in-stock" data-category="cap" data-name="Baby Cap" data-price="₹ 149" data-stock="In Stock (20 pcs)">
-        <img src="images/p6.jpg" alt="Baby Cap" class="product-img">
-        <h2 class="product-name">Baby Cap</h2>
-        <p class="product-price">₹ 149</p>
-        <p class="product-stock in-stock">In Stock (20 pcs)</p>
-      </div>
-
-      <div class="product-card" data-status="in-stock" data-category="sleeping" data-name="Baby Sleeping Bag" data-price="₹ 799" data-stock="In Stock (3 pcs)">
-        <img src="images/p7.jpg" alt="Baby Sleeping Bag" class="product-img">
-        <h2 class="product-name">Baby Sleeping Bag</h2>
-        <p class="product-price">₹ 799</p>
-        <p class="product-stock in-stock">In Stock (3 pcs)</p>
-      </div>
-
-      <div class="product-card" data-status="out-of-stock" data-category="bag" data-name="Premium Mother Bag" data-price="₹ 999" data-stock="Out of Stock">
-        <img src="images/p8.jpg" alt="Premium Mother Bag" class="product-img">
-        <h2 class="product-name">Premium Mother Bag</h2>
-        <p class="product-price">₹ 999</p>
-        <p class="product-stock out-of-stock">Out of Stock</p>
-      </div>
-
-      <div class="product-card" data-status="in-stock" data-category="winterset" data-name="Baby Winter Set" data-price="₹ 899" data-stock="In Stock (4 pcs)">
-        <img src="images/p9.jpg" alt="Baby Winter Set" class="product-img">
-        <h2 class="product-name">Baby Winter Set</h2>
-        <p class="product-price">₹ 899</p>
-        <p class="product-stock in-stock">In Stock (4 pcs)</p>
-      </div>
-
-      <div class="product-card" data-status="in-stock" data-category="gift" data-name="Baby Gift Combo" data-price="₹ 1,199" data-stock="In Stock (2 pcs)">
-        <img src="images/p10.jpg" alt="Baby Gift Combo" class="product-img">
-        <h2 class="product-name">Baby Gift Combo</h2>
-        <p class="product-price">₹ 1,199</p>
-        <p class="product-stock in-stock">In Stock (2 pcs)</p>
-      </div>
-    </section>
-
-    <section class="footer-info">
-      <h2>Shop Detail</h2>
-      <p><strong>Shop Name:</strong> Janki Selection</p>
-      <p><strong>Address:</strong> Shop No 13, Shahyog Park, Opp. Mansarovar Circle, Amroli, Surat</p>
-      <p><strong>Mobile:</strong> 7600482898 / 8866108298</p>
+      <section class="footer-info">
+        <h2>Shop Detail</h2>
+        <p><strong>Shop Name:</strong> Janki Selection</p>
+        <p><strong>Address:</strong> Shop No 13, Shahyog Park, Opp. Mansarovar Circle, Amroli, Surat</p>
+        <p><strong>Mobile:</strong> 7600482898 / 8866108298</p>
+      </section>
     </section>
   </main>
 
